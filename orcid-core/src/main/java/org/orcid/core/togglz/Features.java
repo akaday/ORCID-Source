@@ -7,6 +7,9 @@ import org.togglz.core.context.FeatureContext;
 
 public enum Features implements Feature {
 
+    @Label("OAUTH DOMAINS INTERSTITIAL")
+    OAUTH_DOMAINS_INTERSTITIAL,
+
     @Label("New Relic Browser Monitoring")
     NEW_RELIC_BROWSER_MONITORING,
   
@@ -53,7 +56,10 @@ public enum Features implements Feature {
     EMAIL_DOMAINS,
 
     @Label("Enable email domains in the UI")
-    EMAIL_DOMAINS_UI;
+    EMAIL_DOMAINS_UI,
+    
+    @Label("Enforce rate limiting for public API when disabled the rate monitoring is on. When disabled is the mode is monitoring only.")
+    ENABLE_PAPI_RATE_LIMITING;
     
     public boolean isActive() {
         return FeatureContext.getFeatureManager().isActive(this);
